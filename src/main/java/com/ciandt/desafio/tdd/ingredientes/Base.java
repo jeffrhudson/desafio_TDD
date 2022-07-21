@@ -1,0 +1,39 @@
+package com.ciandt.desafio.tdd.ingredientes;
+
+public class Base implements Ingrediente<TipoBase> {
+
+    private TipoBase tipoBase;
+
+    public Base(TipoBase tipoBase) {
+        this.tipoBase = tipoBase;
+    }
+
+    public TipoBase getTipoBase(){
+        return this.tipoBase;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Base)) return false;
+
+        Base base = (Base) o;
+
+        return tipoBase == base.tipoBase;
+    }
+
+    @Override
+    public int hashCode() {
+        return tipoBase.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return this.tipoBase.toString();
+    }
+
+    @Override
+    public TipoBase obterTipo() {
+        return this.tipoBase;
+    }
+}
